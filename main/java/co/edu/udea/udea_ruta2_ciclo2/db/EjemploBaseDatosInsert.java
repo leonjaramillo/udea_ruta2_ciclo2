@@ -11,7 +11,8 @@ public class EjemploBaseDatosInsert {
             Connection conexion = DriverManager.getConnection(url, "root", "");
             String sentencia = "INSERT INTO vendedores (documento,nombres,apellidos,ciudad) VALUES ('1379','Pepito','Pérez','Barranquilla');";
             Statement consulta = conexion.createStatement();
-            consulta.executeQuery(sentencia);
+            //consulta.executeQuery(sentencia);
+            consulta.Update(sentencia); //Se corrige por Update()
             conexion.close();
         } catch (ClassNotFoundException e) {
             System.out.println("No fue posible cargar el driver.");
